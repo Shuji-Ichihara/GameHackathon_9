@@ -58,3 +58,9 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+GameHackathon_9/.vsconfig
+GameHackathon_9/Library/*
+GameHackathon_9/Logs/*
+GameHackathon_9/Temp/*
+GameHackathon_9/Obj/*
+GameHackathon_9/UserSettings/*
