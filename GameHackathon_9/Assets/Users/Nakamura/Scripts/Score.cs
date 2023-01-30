@@ -8,13 +8,20 @@ public class Score : MonoBehaviour
 {
     [SerializeField]
     private Text scoreText;          //↓場合によってTextMeshProに変更の可能性
-  //private TextMeshPro scoreText;
+                                     //private TextMeshPro scoreText;
+
+    [SerializeField]
+    private Text highScoreText;          //↓場合によってTextMeshProに変更の可能性
+                                     //private TextMeshPro scoreText;
 
     private int _score;
+    private int _highScore=0 ;
 
     void Start()
     {
-        
+        _highScore = PlayerPrefs.GetInt("HighScore", 0);
+        scoreText.text = "SCORE:" + _score.ToString();
+        highScoreText.text = "HIGHSCORE:" + _highScore.ToString();
     }
 
     void Update()
@@ -23,6 +30,15 @@ public class Score : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             AddScore();
+        }
+
+        //ハイスコア時の処理
+        if(_highScore<_score)
+        {
+            _highScore= _score;
+            highScoreText.text = "HIGHSCORE:" + _highScore.ToString();
+            PlayerPrefs.SetInt("HighScore", _highScore);
+            PlayerPrefs.Save();
         }
     }
 
