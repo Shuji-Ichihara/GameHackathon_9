@@ -1,18 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// �m�[�c�I�u�W�F�N�g�̃v�[��
+/// ノーツオブジェクトのプール
 /// </summary>
 public class NotesGenerator : MonoBehaviour
 {
     [SerializeField]
     private GameObject _notesObject = null;
-
-    private List<PoolObject> _list_notes = new List<PoolObject>();
     [SerializeField]
     private const int _maxNotes = 10;
+
+    private List<PoolObject> _list_notes = new List<PoolObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +19,6 @@ public class NotesGenerator : MonoBehaviour
         for (int i = 0; i < _maxNotes; i++)
         {
             PoolObject poolObject;
-
             poolObject = Instantiate(_notesObject).GetComponent<PoolObject>();
             poolObject.transform.parent = this.transform;
             poolObject.gameObject.SetActive(false);
@@ -28,6 +26,10 @@ public class NotesGenerator : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// _list_notes 内のオブジェクトがアクティブ化をチェック
+    /// </summary>
+    /// <param name="pos"></param>
     public void Generate(Vector3 pos)
     {
         for (int i = 0; i < _list_notes.Count; i++)

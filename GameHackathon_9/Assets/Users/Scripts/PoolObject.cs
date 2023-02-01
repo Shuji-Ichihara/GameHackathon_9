@@ -1,7 +1,7 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 /// <summary>
-/// ƒIƒuƒWƒFƒNƒgƒv[ƒ‹‚É•K—v‚È‹@”\
+/// ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒ—ãƒ¼ãƒ«ã«å¿…è¦ãªæ©Ÿèƒ½
 /// </summary>
 public class PoolObject : MonoBehaviour
 {
@@ -10,9 +10,7 @@ public class PoolObject : MonoBehaviour
     public void InitItem(Vector3 pos)
     {
         _transform = GetComponent<Transform>();
-        // ƒIƒuƒWƒFƒNƒg‚Ì¶¬ˆÊ’u‚ğİ’è
-        _transform.position = pos;
-        // ƒAƒCƒeƒ€‚ğƒAƒNƒeƒBƒu‚É‚·‚é
-        gameObject.SetActive(true);
+        _transform.position = pos;      // ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç”Ÿæˆä½ç½®ã‚’è¨­å®š
+        gameObject.SetActive(true);     // ã‚¢ã‚¤ãƒ†ãƒ ã‚’ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«ã™ã‚‹
     }
 }
