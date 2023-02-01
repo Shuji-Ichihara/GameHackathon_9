@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System.Threading;
+using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 /// <summary>
 /// ノーツオブジェクトのプール
 /// </summary>
 public class NotesGenerator : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject _notesObject = null;
+    public GameObject NotesObject { get; set; } = null;
     [SerializeField]
     private const int _maxNotes = 10;
 
@@ -19,8 +20,8 @@ public class NotesGenerator : MonoBehaviour
         for (int i = 0; i < _maxNotes; i++)
         {
             PoolObject poolObject;
-            poolObject = Instantiate(_notesObject).GetComponent<PoolObject>();
-            poolObject.transform.parent = this.transform;
+            poolObject = Instantiate(NotesObject).GetComponent<PoolObject>();
+            poolObject.transform.parent = transform;
             poolObject.gameObject.SetActive(false);
             _list_notes.Add(poolObject);
         }
