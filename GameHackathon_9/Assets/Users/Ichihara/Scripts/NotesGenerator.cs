@@ -8,7 +8,9 @@ using Cysharp.Threading.Tasks;
 /// </summary>
 public class NotesGenerator : MonoBehaviour
 {
-    public GameObject NotesObject { get; set; } = null;
+    [SerializeField]
+    private GameObject _notesObject = null;
+    public GameObject NotesObject { get; set; }
     [SerializeField]
     private const int _maxNotes = 10;
 
@@ -17,6 +19,7 @@ public class NotesGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        NotesObject = _notesObject;
         for (int i = 0; i < _maxNotes; i++)
         {
             PoolObject poolObject;
