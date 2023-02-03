@@ -8,6 +8,8 @@ using Cysharp.Threading.Tasks;
 /// </summary>
 public class NotesGenerator : MonoBehaviour
 {
+    public string ObjectName { get; private set; } = "";
+
     [SerializeField]
     private GameObject _notesObject = null;
     [SerializeField]
@@ -19,6 +21,7 @@ public class NotesGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ObjectName = gameObject.name;
         for (int i = 0; i < _maxNotes; i++)
         {
             PoolObject poolObject;
@@ -33,7 +36,7 @@ public class NotesGenerator : MonoBehaviour
     /// _list_notes 内のオブジェクトがアクティブ化をチェック
     /// </summary>
     /// <param name="pos"></param>
-    public void Generate(Vector3 pos)
+    public async UniTask Generate(Vector3 pos, CancellationTokenSource token)
     {
         for (int i = 0; i < _list_notes.Count; i++)
         {
@@ -42,6 +45,8 @@ public class NotesGenerator : MonoBehaviour
                 _list_notes[i].InitItem(pos);
                 break;
             }
+            await UniTask.Yield();
         }
+        token.Cancel();
     }
 }
