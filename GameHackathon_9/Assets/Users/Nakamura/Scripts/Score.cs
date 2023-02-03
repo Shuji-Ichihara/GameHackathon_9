@@ -27,11 +27,11 @@ public class Score : MonoBehaviour
 
     void Update()
     {
-        //  テスト用　関数呼ぶ処理出来たら削除
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            AddScore();
-        }
+        ////  テスト用　関数呼ぶ処理出来たら削除
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    AddScore();
+        //}
 
         //ハイスコア時の処理
         if (_highScore<_score)
@@ -42,10 +42,10 @@ public class Score : MonoBehaviour
             PlayerPrefs.Save();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene("ResultScoreScene");
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    SceneManager.LoadScene("ResultScoreScene");
+        //}
 
     }
 
