@@ -11,6 +11,7 @@ public class Notes : MonoBehaviour
     void Update()
     {
         MoveNotes();
+        EraseNotes();
     }
 
     /// <summary>
@@ -18,7 +19,18 @@ public class Notes : MonoBehaviour
     /// </summary>
     private void MoveNotes()
     {
-        Vector3 move = Vector3.right * _moveSpeed * Time.deltaTime ;
+        Vector3 move = Vector3.right * _moveSpeed * Time.deltaTime;
         transform.Translate(move);
+    }
+
+    /// <summary>
+    /// 画面外に出たらノーツを消す処理
+    /// </summary>
+    private void EraseNotes()
+    {
+        if (transform.position.x > Screen.width / 2 + transform.localScale.x / 2)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
