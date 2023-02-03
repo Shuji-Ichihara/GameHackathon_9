@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 199322563}
   - component: {fileID: 199322564}
+  - component: {fileID: 199322565}
   m_Layer: 0
   m_Name: NotePop_2
   m_TagString: Untagged
@@ -167,7 +168,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b82fb09e39e62354c973d35bdcab56e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _notesObject: {fileID: 0}
+  _notesObject: {fileID: 4601362101749942691, guid: bfd1dc92957144942a7470543c7c2761, type: 3}
+--- !u!114 &199322565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199322562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5054d33c062b63d4cbbd9de06571d09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &455844522
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,6 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 545194473}
   - component: {fileID: 545194474}
+  - component: {fileID: 545194475}
   m_Layer: 0
   m_Name: NotePop_3
   m_TagString: Untagged
@@ -365,7 +379,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b82fb09e39e62354c973d35bdcab56e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _notesObject: {fileID: 0}
+  _notesObject: {fileID: 4601362101749942691, guid: a52277342f816674092889ecc504944a, type: 3}
+--- !u!114 &545194475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545194472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5054d33c062b63d4cbbd9de06571d09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &568574974
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,7 +449,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -443,8 +469,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568574974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 480, y: -240, z: 0}
-  m_LocalScale: {x: 100, y: 600, z: 1}
+  m_LocalPosition: {x: 480, y: -270, z: 0}
+  m_LocalScale: {x: 100, y: 540, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -650,6 +676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1074483613}
   - component: {fileID: 1074483614}
+  - component: {fileID: 1074483615}
   m_Layer: 0
   m_Name: NotePop_4
   m_TagString: Untagged
@@ -685,6 +712,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _notesObject: {fileID: 0}
+--- !u!114 &1074483615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074483612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5054d33c062b63d4cbbd9de06571d09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1178019412
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,8 +880,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1273661003}
-  - component: {fileID: 1273661002}
   - component: {fileID: 1273661004}
+  - component: {fileID: 1273661005}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -850,21 +889,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1273661002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1273661001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5054d33c062b63d4cbbd9de06571d09d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _notesSpawnInterval: 3
-  _tapZone: {fileID: 568574974}
-  _noteGenerator: {fileID: 199322564}
 --- !u!4 &1273661003
 Transform:
   m_ObjectHideFlags: 0
@@ -894,6 +918,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 688773296}
   highScoreText: {fileID: 1246658002}
+--- !u!114 &1273661005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273661001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 264a2b5cf12822543b3dba120c7e9df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _notesSpawnInterval: 3
+  _tapZone: {fileID: 568574974}
+  _list_notesGenerator:
+  - {fileID: 199322564}
+  - {fileID: 545194474}
 --- !u!1 &1292620793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,6 +1047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1301919463}
   - component: {fileID: 1301919464}
+  - component: {fileID: 1301919465}
   m_Layer: 0
   m_Name: NotePop_1
   m_TagString: Untagged
@@ -1041,3 +1083,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _notesObject: {fileID: 0}
+--- !u!114 &1301919465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301919462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5054d33c062b63d4cbbd9de06571d09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
