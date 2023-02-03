@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Users/Nakamura/TestScoreScene.unity
+    guid: 34acd5f897b6e08409a5b92450d65c0c
+  - enabled: 1
+    path: Assets/Users/Nakamura/ResultScoreScene.unity
+    guid: 6f14dc6c1b395fe49b89ddbbc80a5d5e
   m_configObjects: {}
