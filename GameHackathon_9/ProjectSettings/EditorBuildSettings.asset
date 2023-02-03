@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Users/Nakamura/ResultScoreScene.unity
     guid: 6f14dc6c1b395fe49b89ddbbc80a5d5e
+  - enabled: 1
+    path: Assets/Users/Metoki/Scenes/TitleScene.unity
+    guid: 99e3eda2c2743f3498c0d901bc373f94
   m_configObjects: {}

@@ -16,7 +16,7 @@ public class TitleSceneChange : MonoBehaviour
     {
         if(Input.GetKeyUp(KeyCode.Space))
         {
-            SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene("SampleScene");
         }
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Test_Limit_Time : MonoBehaviour
 {
     private float up_time = 0.0f;
+    [SerializeField]
     private int time_limit = 0;
 
     public float Max_Up_Time = 1f;
@@ -26,7 +27,7 @@ public class Test_Limit_Time : MonoBehaviour
 
         if(time_limit >= Max_Time_Limit)
         {
-            SceneManager.LoadScene("Test_END");
+            SceneManager.LoadScene("ResultScoreScene");
         }
     }
 }
