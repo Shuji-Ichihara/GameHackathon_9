@@ -1,66 +1,31 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 
-public class NotesManager : SingletonMonoBehaviour<NotesManager>
+public class NotesManager : MonoBehaviour
 {
-    [SerializeField]
-    private float _notesSpawnInterval = 3.0f;
-    private float _dummyNotesSpawnInterval = 0.0f;
+    private GameManager _gameManager = null;
 
-    [SerializeField]
-    private GameObject _tapZone = null;
-    public GameObject TapZone => _tapZone;
+    private CancellationTokenSource _token = new CancellationTokenSource();
 
-    [SerializeField]
-    private NotesGenerator _noteGenerator = null;
-
-    private bool IsTap = false;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        _dummyNotesSpawnInterval = _notesSpawnInterval;
+        _gameManager = GameManager.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        GenerateNotes(_noteGenerator);
-    }
-
-    private void GenerateNotes(NotesGenerator notesGenerator)
-    {
-        _dummyNotesSpawnInterval -= Time.deltaTime;
-        if(_dummyNotesSpawnInterval == 0.0f)
-        { 
-            notesGenerator.Generate(notesGenerator.gameObject.transform.position);
-            _dummyNotesSpawnInterval = _notesSpawnInterval;
-        }
-    }
-
-
-    /// <summary>
-    /// ノーツをタップした時の成功、失敗の判定
-    /// </summary>
-    private void TapNotes()
-    {
-        // タップ成功の範囲
-        var tapSuccess = TapZone.transform.position.x / 2;
-
-        if (Input.GetKeyDown(KeyCode.Space)
-            && (transform.position.x == TapZone.transform.position.x - tapSuccess
-            || transform.position.x == TapZone.transform.position.x + tapSuccess))
+        if (_gameManager._list_notesGenerator[(int)NotesPop.NotesPop1].ObjectName == gameObject.name)
         {
-            IsTap = true;
+            _gameManager.GenerateNotes1(_gameManager._list_notesGenerator[(int)NotesPop.NotesPop1]);
+            _gameManager.TapNotes(NotesPop.NotesPop1);
         }
-        else if (transform.position.x > 
-                 Screen.width + _noteGenerator.NotesObject.transform.position.x / 2)
+        if (_gameManager._list_notesGenerator[(int)NotesPop.NotesPop2].ObjectName == gameObject.name)
         {
-            _noteGenerator.NotesObject.SetActive(false);
+            _gameManager.GenerateNotes2(_gameManager._list_notesGenerator[(int)NotesPop.NotesPop2], _token).Forget();
+            _gameManager.TapNotes(NotesPop.NotesPop2);
         }
     }
-
 }
