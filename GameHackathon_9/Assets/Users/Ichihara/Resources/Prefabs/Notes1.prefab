@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 4601362101749942695}
   - component: {fileID: 4601362101749942694}
   m_Layer: 0
-  m_Name: Notes
+  m_Name: Notes1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4601362101749942693
 Transform:
   m_ObjectHideFlags: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e093ced1192bf942bc06bbfd2288d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 100
+  _moveSpeed: 200
 --- !u!114 &4601362101749942694
 MonoBehaviour:
   m_ObjectHideFlags: 0
