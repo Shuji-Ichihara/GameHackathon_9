@@ -12,7 +12,7 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
             {
                 Type t = typeof(T);
                 instance = (T)FindObjectOfType(t);
-                if(instance = null)
+                if(instance == null)
                 {
                     Debug.LogError(t + "をアタッチしている GameObject はありません。");
                 }
