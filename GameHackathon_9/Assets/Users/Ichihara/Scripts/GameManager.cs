@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
@@ -12,6 +13,13 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [SerializeField]
     private float _notesSpawnInterval = 3.0f;
     private float _dummyNotesSpawnInterval = 0.0f;
+
+    [SerializeField]
+    private Charamove _charamove;
+    [SerializeField]
+    private AudioClip sound1;
+    [SerializeField]
+    AudioSource audioSource;
 
     [SerializeField]
     private GameObject _tapZone = null;
@@ -74,11 +82,23 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
                 if (_list_notesGenerator[(int)notesPop]._list_notes[i].transform.position.x >= _tapZone.transform.position.x - tapSuccess
                 && _list_notesGenerator[(int)notesPop]._list_notes[i].transform.position.x <= _tapZone.transform.position.x + tapSuccess)
                 {
-                    _list_notesGenerator[(int)notesPop]._list_notes[i].gameObject.SetActive(false);
-                    _score.AddScore();
+                    if (true == _list_notesGenerator[(int)notesPop]._list_notes[i].gameObject.activeSelf)
+                    {
+                        StartCoroutine(SE());
+                        StartCoroutine(_charamove.Run());
+                        _score.AddScore();
+                        _list_notesGenerator[(int)notesPop]._list_notes[i].gameObject.SetActive(false);
+                    }
                     break;
                 }
             }
         }
+    }
+
+    IEnumerator SE()
+    {
+        audioSource.PlayOneShot(sound1);
+        yield return new WaitForSeconds(1);
+        audioSource.Stop();
     }
 }

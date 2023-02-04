@@ -22,10 +22,10 @@ public class NotesManager : MonoBehaviour
             _gameManager.GenerateNotes1(_gameManager._list_notesGenerator[(int)NotesPop.NotesPop1]);
             _gameManager.TapNotes(NotesPop.NotesPop1);
         }
-        if (_gameManager._list_notesGenerator[(int)NotesPop.NotesPop2].ObjectName == gameObject.name)
-        {
-            _gameManager.GenerateNotes2(_gameManager._list_notesGenerator[(int)NotesPop.NotesPop2], _token).Forget();
-            _gameManager.TapNotes(NotesPop.NotesPop2);
-        }
+        //if (_gameManager._list_notesGenerator[(int)NotesPop.NotesPop2].ObjectName == gameObject.name)
+        //{
+        //    _gameManager.GenerateNotes2(_gameManager._list_notesGenerator[(int)NotesPop.NotesPop2], _token).Forget();
+        //    _gameManager.TapNotes(NotesPop.NotesPop2);
+        //}
     }
 }

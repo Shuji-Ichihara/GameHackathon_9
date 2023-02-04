@@ -15,13 +15,10 @@ public class Charamove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            StartCoroutine(Run());
-        }
+
     }
 
-    IEnumerator Run()
+    public  IEnumerator Run()
     {
         anim.SetBool("isRun", true);
         yield return new WaitForSeconds(0.5f);

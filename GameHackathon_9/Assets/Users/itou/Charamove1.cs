@@ -22,7 +22,7 @@ public class Charamove1 : MonoBehaviour
         anim.SetBool("isRun", true);
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("isRun", false);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
         StartCoroutine(Run());
     }
 }
