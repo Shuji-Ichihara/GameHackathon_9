@@ -98,7 +98,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     IEnumerator SE()
     {
         audioSource.PlayOneShot(sound1);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.6f);
         audioSource.Stop();
     }
 }

@@ -932,7 +932,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258915462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 138.09435, y: -119.43944, z: -4.6658144}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1215,7 +1215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _notesSpawnInterval: 1
   _charamove: {fileID: 8640346476032074188}
-  sound1: {fileID: 8300000, guid: e07f8a23df55649409e614abdd24d87f, type: 3}
+  sound1: {fileID: 8300000, guid: 8d5318b6bec30ab4c99655965fa77e23, type: 3}
   audioSource: {fileID: 1258915464}
   _tapZone: {fileID: 1340786114}
   _list_notesGenerator:
@@ -1260,9 +1260,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e07f8a23df55649409e614abdd24d87f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
